@@ -66,7 +66,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-
         //Intent
         Starthttp = findViewById(R.id.starthttp);
         //intent打开网页
