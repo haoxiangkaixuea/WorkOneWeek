@@ -10,15 +10,64 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
+    private Button Startfirst,Startsecond;
     private Button Sendnews, Starthttp, ReturnNews;
     public final static String BASE = "base";
     private final static String TAG = "TEST";
     private TextView tv1;
 
     @Override
+    protected void onStart() {
+        super.onStart();
+        Log.d(TAG,"onStart");
+
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.d(TAG,"onResume");
+    }
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.d(TAG,"onPause");
+    }
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.d(TAG,"onStop");
+    }
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d(TAG,"onDestroy");
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.d(TAG,"onRestart");
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //生命周期
+        Startfirst=findViewById(R.id.startfrist);
+        Startsecond=findViewById(R.id.startsecond);
+        Startfirst.setOnClickListener(v->{
+            Intent intent=new Intent(this,FirstActivity.class);
+            startActivity(intent);
+        });
+        Startsecond.setOnClickListener(v->{
+            Intent intent=new Intent(this,SecondActivity.class);
+            startActivity(intent);
+        });
+
+
+
+        //Intent
         Starthttp = findViewById(R.id.starthttp);
         //intent打开网页
         Starthttp.setOnClickListener(v -> {
@@ -64,7 +113,6 @@ public class MainActivity extends AppCompatActivity {
     //原 Activity 中重写 onActivityResult() 方法
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-
         super.onActivityResult(requestCode, resultCode, data);
         switch (requestCode) {
             case 1:
