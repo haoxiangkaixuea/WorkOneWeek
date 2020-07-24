@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 public class ViewAdapter extends RecyclerView.Adapter<ViewAdapter.ViewHolder> {
-    private List<User> users;
+    private List<User> mUsers;
 
     static class ViewHolder extends RecyclerView.ViewHolder {
         private TextView name;
@@ -26,7 +26,7 @@ public class ViewAdapter extends RecyclerView.Adapter<ViewAdapter.ViewHolder> {
     }
 
     public ViewAdapter(List<User> user) {
-        users = user;
+        mUsers = user;
     }
 
     //
@@ -41,7 +41,7 @@ public class ViewAdapter extends RecyclerView.Adapter<ViewAdapter.ViewHolder> {
     // 列表每项的内容
     @Override
     public void onBindViewHolder(@NonNull ViewAdapter.ViewHolder holder, int position) {
-        User user = users.get(position);
+        User user = mUsers.get(position);
         holder.name.setText(user.getName());
         holder.simg.setImageResource(user.getImg());
     }
@@ -49,6 +49,6 @@ public class ViewAdapter extends RecyclerView.Adapter<ViewAdapter.ViewHolder> {
     //列表有多少项
     @Override
     public int getItemCount() {
-        return users.size();
+        return mUsers.size();
     }
 }

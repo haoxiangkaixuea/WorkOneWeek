@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 public class TestActivity extends AppCompatActivity {
     private TextView tv;
-    private Button Backmassage;
+    private Button backMassage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,8 +20,8 @@ public class TestActivity extends AppCompatActivity {
 //        Student s = (Student) getIntent().getSerializableExtra(MainActivity.BASE);
 //        tv.setText(s.toString());
 
-        Backmassage = findViewById(R.id.backmassage);
-        Backmassage.setOnClickListener(v -> {
+        backMassage = findViewById(R.id.backmassage);
+        backMassage.setOnClickListener(v -> {
             Intent intent = new Intent();
             intent.putExtra("date_return", "你好");
             //把intent传回去

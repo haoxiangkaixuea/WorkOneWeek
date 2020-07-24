@@ -16,8 +16,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    private Button Startfirst, Startsecond;
-    private Button Sendnews, Starthttp, ReturnNews;
+    private Button startFirst, startSecond;
+    private Button sendNews, startHttp, returnNews;
     public final static String BASE = "base";
     private final static String TAG = "TEST";
     private TextView tv1;
@@ -78,22 +78,22 @@ public class MainActivity extends AppCompatActivity {
 
 
         //生命周期
-        Startfirst = findViewById(R.id.startfrist);
-        Startsecond = findViewById(R.id.startsecond);
-        Startfirst.setOnClickListener(v -> {
+        startFirst = findViewById(R.id.startfrist);
+        startSecond = findViewById(R.id.startsecond);
+        startFirst.setOnClickListener(v -> {
             Intent intent = new Intent(this, FirstActivity.class);
             startActivity(intent);
         });
-        Startsecond.setOnClickListener(v -> {
+        startSecond.setOnClickListener(v -> {
             Intent intent = new Intent(this, SecondActivity.class);
             startActivity(intent);
         });
 
 
         //Intent
-        Starthttp = findViewById(R.id.starthttp);
+        startHttp = findViewById(R.id.starthttp);
         //intent打开网页
-        Starthttp.setOnClickListener(v -> {
+        startHttp.setOnClickListener(v -> {
             Intent intent = new Intent(Intent.ACTION_VIEW);
             intent.setData(Uri.parse("http://www.baidu.com"));
             //打电话
@@ -101,15 +101,15 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         });
         //返回数据
-        ReturnNews = findViewById(R.id.button2);
-        ReturnNews.setOnClickListener(v -> {
+        returnNews = findViewById(R.id.button2);
+        returnNews.setOnClickListener(v -> {
             Intent intent = new Intent(this, TestActivity.class);
             startActivityForResult(intent, 1);
         });
 
         //传递数据
-        Sendnews = findViewById(R.id.sendnews);
-        Sendnews.setOnClickListener(v -> {
+        sendNews = findViewById(R.id.sendnews);
+        sendNews.setOnClickListener(v -> {
             /**
              * 传递Serializable对象
              */

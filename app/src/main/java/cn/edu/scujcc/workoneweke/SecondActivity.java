@@ -8,14 +8,14 @@ import android.util.Log;
 import android.widget.Button;
 
 public class SecondActivity extends AppCompatActivity {
-    private Button SecondButton;
+    private Button secondButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
         Log.d("FristActivity",this.toString());
-        SecondButton=findViewById(R.id.secondbutton);
-        SecondButton.setOnClickListener(v->{
+        secondButton=findViewById(R.id.secondbutton);
+        secondButton.setOnClickListener(v->{
             Intent intent=new Intent(this,FirstActivity.class);
             startActivity(intent);
         });
