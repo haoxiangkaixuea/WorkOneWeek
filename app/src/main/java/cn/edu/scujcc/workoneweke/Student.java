@@ -4,8 +4,8 @@ import java.io.Serializable;
 import java.lang.annotation.Annotation;
 
 public class Student implements Serializable {
- private  String StuName;
-    private  String ClassName;
+    private String StuName;
+    private String ClassName;
 
     @Override
     public String toString() {

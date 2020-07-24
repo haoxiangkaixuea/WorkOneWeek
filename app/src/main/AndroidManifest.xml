@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".RecyclerActivity"></activity>
 
         <receiver
             android:name=".MyBroadCastReceiver"
@@ -18,21 +19,21 @@
                 <action android:name="cn.edu.scujcc.workoneweke.MY_BROADCAST" />
             </intent-filter>
         </receiver>
+
         <activity
             android:name=".SecondActivity"
             android:theme="@style/Theme.AppCompat.Dialog" />
         <activity
             android:name=".FirstActivity"
-            android:launchMode="singleTask">
+            android:launchMode="singleTask"></activity>
+        <activity android:name=".TestActivity" /> <!-- android:launchMode="singleTask"> -->
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
                 <data android:scheme="http" />
             </intent-filter>
-
         </activity>
-        <activity android:name=".TestActivity" /> <!-- android:launchMode="singleTask"> -->
-        <activity android:name=".MainActivity"></activity>
     </application>
 
 </manifest>

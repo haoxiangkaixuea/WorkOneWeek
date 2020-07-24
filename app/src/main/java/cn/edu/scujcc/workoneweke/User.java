@@ -4,30 +4,40 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class User implements Parcelable {
-    private int id;
+    private int img;
     private String name;
 
     public User() {
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
+    public User(String name, int img) {
+        this.name= name;
+        this.img =img;
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getId() {
-        return id;
     }
 
     public String getName() {
         return name;
     }
 
-    protected User(Parcel in) {
+    public void setName(String name) {
+        this.name = name;
+    }
 
+    public int getImg() {
+        return img;
+    }
+
+    public void setImg(int img) {
+        this.img = img;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "name='" + name + '\'' +
+                ", img='" + img + '\'' +
+                '}';
     }
 
     //重写describeContents，返回0
@@ -39,7 +49,7 @@ public class User implements Parcelable {
     //重写writeToParcel，写出字段
     @Override
     public void writeToParcel(Parcel parcel, int flage) {
-        parcel.writeInt(id);
+      //  parcel.writeString(img);
         parcel.writeString(name);
     }
 
@@ -47,7 +57,7 @@ public class User implements Parcelable {
         @Override
         public User createFromParcel(Parcel in) {
             User user = new User();
-            user.id = in.readInt();
+            //user.img = in.readString();
             user.name = in.readString();
             return user;
         }
