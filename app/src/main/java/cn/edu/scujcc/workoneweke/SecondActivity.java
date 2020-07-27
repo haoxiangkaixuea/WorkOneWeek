@@ -9,6 +9,36 @@ import android.widget.Button;
 
 public class SecondActivity extends AppCompatActivity {
     private Button secondButton;
+    private final static String TAG = "TEST";
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.d(TAG, "onStart");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.d(TAG, "onResume");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.d(TAG, "onPause");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.d(TAG, "onStop");
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.d(TAG, "onRestart");
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -16,7 +46,7 @@ public class SecondActivity extends AppCompatActivity {
         Log.d("FristActivity",this.toString());
         secondButton=findViewById(R.id.secondbutton);
         secondButton.setOnClickListener(v->{
-            Intent intent=new Intent(this,FirstActivity.class);
+            Intent intent=new Intent(this,TestActivity.class);
             startActivity(intent);
         });
     }

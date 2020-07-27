@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".RecyclerActivity"></activity>
+        <activity android:name=".RightFragment"></activity>
+        <activity android:name=".LeftFragment" />
+        <activity android:name=".RecyclerActivity" />
 
         <receiver
             android:name=".MyBroadCastReceiver"
@@ -25,12 +27,14 @@
             android:theme="@style/Theme.AppCompat.Dialog" />
         <activity
             android:name=".FirstActivity"
-            android:launchMode="singleTask"></activity>
+            android:launchMode="singleTask" />
         <activity android:name=".TestActivity" /> <!-- android:launchMode="singleTask"> -->
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
+
                 <data android:scheme="http" />
             </intent-filter>
         </activity>

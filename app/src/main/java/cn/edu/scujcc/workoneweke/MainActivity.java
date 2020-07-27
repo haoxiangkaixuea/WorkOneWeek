@@ -103,8 +103,9 @@ public class MainActivity extends AppCompatActivity {
         //返回数据
         returnNews = findViewById(R.id.button2);
         returnNews.setOnClickListener(v -> {
-            Intent intent = new Intent(this, TestActivity.class);
-            startActivityForResult(intent, 1);
+            Intent intent = new Intent(this, FirstActivity.class);
+            startActivity(intent);
+            //startActivityForResult(intent, 1);
         });
 
         //传递数据
@@ -154,23 +155,23 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    //原 Activity 中重写 onActivityResult() 方法
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        switch (requestCode) {
-            case 1:
-                if (resultCode == RESULT_OK) {
-//                    String returndate = data.getStringExtra("date_return");
-                    //获取Intent后,通过key获取对应的值,然后把值设置给TextView
-                    String base = data.getStringExtra("date_return");
-                    // getIntent().getIntExtra(MainActivity.BASE, 0);
-                    tv1 = findViewById(R.id.textView2);
-                    tv1.setText(String.valueOf(base));
-                    // Log.d(TAG, returndate);
-                }
-                break;
-            default:
-        }
-    }
+//    //原 Activity 中重写 onActivityResult() 方法
+//    @Override
+//    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+//        super.onActivityResult(requestCode, resultCode, data);
+//        switch (requestCode) {
+//            case 1:
+//                if (resultCode == RESULT_OK) {
+//                    // String returndate = data.getStringExtra("date_return");
+//                    //获取Intent后,通过key获取对应的值,然后把值设置给TextView
+//                    String base = data.getStringExtra("date_return");
+//                    // getIntent().getIntExtra(MainActivity.BASE, 0);
+//                    tv1 = findViewById(R.id.textView2);
+//                    tv1.setText(String.valueOf(base));
+//                    // Log.d(TAG, returndate);
+//                }
+//                break;
+//            default:
+//        }
+//    }
 }
