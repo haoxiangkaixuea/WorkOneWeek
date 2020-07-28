@@ -9,26 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".RightFragment"></activity>
-        <activity android:name=".LeftFragment" />
-        <activity android:name=".RecyclerActivity" />
-
-        <receiver
-            android:name=".MyBroadCastReceiver"
-            android:enabled="true"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="cn.edu.scujcc.workoneweke.MY_BROADCAST" />
-            </intent-filter>
-        </receiver>
-
-        <activity
-            android:name=".SecondActivity"
-            android:theme="@style/Theme.AppCompat.Dialog" />
-        <activity
-            android:name=".FirstActivity"
-            android:launchMode="singleTask" />
-        <activity android:name=".TestActivity" /> <!-- android:launchMode="singleTask"> -->
+        <activity android:name=".AnotherRight"></activity>
+        <activity android:name=".RightFragment" />
+        <activity android:name=".LeftFragment" /> <!-- android:launchMode="singleTask"> -->
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
