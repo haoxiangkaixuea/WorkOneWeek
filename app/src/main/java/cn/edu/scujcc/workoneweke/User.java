@@ -3,7 +3,24 @@ package cn.edu.scujcc.workoneweke;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+/**
+ * @author Administrator
+ */
 public class User implements Parcelable {
+    public static final Creator<User> CREATOR = new Creator<User>() {
+        @Override
+        public User createFromParcel(Parcel in) {
+            User user = new User();
+            //user.img = in.readString();
+            user.name = in.readString();
+            return user;
+        }
+
+        @Override
+        public User[] newArray(int size) {
+            return new User[size];
+        }
+    };
     private int img;
     private String name;
 
@@ -11,8 +28,8 @@ public class User implements Parcelable {
     }
 
     public User(String name, int img) {
-        this.name= name;
-        this.img =img;
+        this.name = name;
+        this.img = img;
 
     }
 
@@ -49,23 +66,8 @@ public class User implements Parcelable {
     //重写writeToParcel，写出字段
     @Override
     public void writeToParcel(Parcel parcel, int flage) {
-      //  parcel.writeString(img);
+        //  parcel.writeString(img);
         parcel.writeString(name);
     }
-
-    public static final Creator<User> CREATOR = new Creator<User>() {
-        @Override
-        public User createFromParcel(Parcel in) {
-            User user = new User();
-            //user.img = in.readString();
-            user.name = in.readString();
-            return user;
-        }
-
-        @Override
-        public User[] newArray(int size) {
-            return new User[size];
-        }
-    };
 
 }

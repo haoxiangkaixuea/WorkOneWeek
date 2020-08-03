@@ -1,11 +1,11 @@
 package cn.edu.scujcc.workoneweke;
 
 import java.io.Serializable;
-import java.lang.annotation.Annotation;
 
+/**
+ * @author Administrator
+ */
 public class Student implements Serializable {
-
-
     private String stuName;
     private String className;
 

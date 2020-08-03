@@ -1,16 +1,17 @@
 package cn.edu.scujcc.workoneweke;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 public class FirstActivity extends AppCompatActivity {
-    private Button fristButton, sendbrodcast,startSecond;
     private final static String TAG = "TEST";
+    private Button fristButton, sendbrodcast, startSecond;
+
     @Override
     protected void onStart() {
         super.onStart();
@@ -46,6 +47,7 @@ public class FirstActivity extends AppCompatActivity {
         super.onRestart();
         Log.d(TAG, "onRestart");
     }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,17 +59,16 @@ public class FirstActivity extends AppCompatActivity {
         fristButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                setResult(1,getIntent());//将MainActivity传过来的数据传递回去,也可以创建新的Intent传回去
+                setResult(1, getIntent());//将MainActivity传过来的数据传递回去,也可以创建新的Intent传回去
                 finish();
             }
         });
 
-        startSecond=findViewById(R.id.startactivity);
-        startSecond.setOnClickListener(v->{
+        startSecond = findViewById(R.id.startactivity);
+        startSecond.setOnClickListener(v -> {
             Intent intent = new Intent(this, SecondActivity.class);
             startActivityForResult(intent, 1);
         });
-
 
 
         //发送广播

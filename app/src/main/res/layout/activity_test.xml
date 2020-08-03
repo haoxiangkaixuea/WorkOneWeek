@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/img_back"
     tools:context=".TestActivity">
 
     <TextView
@@ -23,7 +24,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="38dp"
+        android:background="@drawable/button_img"
+        android:focusable="true"
         android:text="关闭并返回数据"
+        android:textColor="@color/red"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
@@ -33,7 +37,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
+        android:background="@drawable/button_img"
+        android:focusable="true"
         android:text="SatrFristActivity"
+        android:textColor="@color/red"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/backmassage" />
 </androidx.constraintlayout.widget.ConstraintLayout>

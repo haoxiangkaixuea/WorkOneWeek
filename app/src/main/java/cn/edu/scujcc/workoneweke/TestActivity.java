@@ -1,7 +1,5 @@
 package cn.edu.scujcc.workoneweke;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -9,10 +7,16 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+/**
+ * @author Administrator
+ */
 public class TestActivity extends AppCompatActivity {
-    private TextView tv;
-    private Button backMassage, startFrist;
     private final static String TAG = "TEST";
+    private TextView tv;
+    private Button backMassage;
+
     @Override
     protected void onStart() {
         super.onStart();
@@ -48,12 +52,13 @@ public class TestActivity extends AppCompatActivity {
         super.onRestart();
         Log.d(TAG, "onRestart");
     }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
 
-        startFrist = findViewById(R.id.starfristactivity);
+        Button startFrist = findViewById(R.id.starfristactivity);
         startFrist.setOnClickListener(v -> {
             Intent intent = new Intent(this, FirstActivity.class);
             intent.putExtra(MainActivity.BASE, "for result");

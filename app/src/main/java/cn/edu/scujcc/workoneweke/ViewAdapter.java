@@ -11,19 +11,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
+/**
+ * @author Administrator
+ */
 public class ViewAdapter extends RecyclerView.Adapter<ViewAdapter.ViewHolder> {
     private List<User> mUsers;
-
-    static class ViewHolder extends RecyclerView.ViewHolder {
-        private TextView name;
-        private ImageView simg;
-
-        public ViewHolder(@NonNull View itemView) {
-            super(itemView);
-            name = itemView.findViewById(R.id.studentname);
-            simg = itemView.findViewById(R.id.studentimage);
-        }
-    }
 
     public ViewAdapter(List<User> user) {
         mUsers = user;
@@ -50,5 +42,16 @@ public class ViewAdapter extends RecyclerView.Adapter<ViewAdapter.ViewHolder> {
     @Override
     public int getItemCount() {
         return mUsers.size();
+    }
+
+    static class ViewHolder extends RecyclerView.ViewHolder {
+        private TextView name;
+        private ImageView simg;
+
+        public ViewHolder(@NonNull View itemView) {
+            super(itemView);
+            name = itemView.findViewById(R.id.studentname);
+            simg = itemView.findViewById(R.id.studentimage);
+        }
     }
 }

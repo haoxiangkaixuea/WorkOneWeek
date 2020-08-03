@@ -1,25 +1,27 @@
 package cn.edu.scujcc.workoneweke;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author Administrator
+ */
 public class MainActivity extends AppCompatActivity {
-    private Button startFirst, startSecond;
-    private Button sendNews, startHttp, returnNews;
     public final static String BASE = "base";
     private final static String TAG = "TEST";
+    private Button startFirst, startSecond;
+    private Button sendNews, startHttp, returnNews;
     private TextView tv1;
     private List<User> userList = new ArrayList<>();
 

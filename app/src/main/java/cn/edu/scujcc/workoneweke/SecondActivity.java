@@ -1,15 +1,19 @@
 package cn.edu.scujcc.workoneweke;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+/**
+ * @author Administrator
+ */
 public class SecondActivity extends AppCompatActivity {
-    private Button secondButton;
     private final static String TAG = "TEST";
+    private Button secondButton;
+
     @Override
     protected void onStart() {
         super.onStart();
@@ -39,14 +43,15 @@ public class SecondActivity extends AppCompatActivity {
         super.onRestart();
         Log.d(TAG, "onRestart");
     }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
-        Log.d("FristActivity",this.toString());
-        secondButton=findViewById(R.id.secondbutton);
-        secondButton.setOnClickListener(v->{
-            Intent intent=new Intent(this,TestActivity.class);
+        Log.d("FristActivity", this.toString());
+        secondButton = findViewById(R.id.secondbutton);
+        secondButton.setOnClickListener(v -> {
+            Intent intent = new Intent(this, TestActivity.class);
             startActivity(intent);
         });
     }
@@ -54,6 +59,6 @@ public class SecondActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Log.d("SecondActivity","onDestroy");
+        Log.d("SecondActivity", "onDestroy");
     }
 }
