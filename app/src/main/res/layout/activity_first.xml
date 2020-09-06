@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/img_back"
     tools:context=".FirstActivity">
 
     <TextView
@@ -24,10 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="44dp"
         android:layout_marginTop="56dp"
-        android:background="@drawable/button_img"
-        android:focusable="true"
         android:text="FristButton"
-        android:textColor="@color/red"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
@@ -36,11 +32,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="44dp"
-        android:layout_marginTop="56dp"
-        android:background="@drawable/button_img"
-        android:focusable="true"
+        android:layout_marginTop="60dp"
         android:text="SendBrodcast"
-        android:textColor="@color/red"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fristbutton" />
 
@@ -50,10 +43,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="44dp"
         android:layout_marginTop="40dp"
-        android:background="@drawable/button_img"
-        android:focusable="true"
         android:text="StartActivity"
-        android:textColor="@color/red"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sendbrodcast" />
 
