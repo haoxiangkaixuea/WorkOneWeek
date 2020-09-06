@@ -26,16 +26,17 @@ public class ViewAdapter extends RecyclerView.Adapter<ViewAdapter.ViewHolder> {
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_recycler, parent, false);
-        ViewHolder holder = new ViewHolder(view);
-        return holder;
+        return new ViewHolder(view);
     }
 
-    // 列表每项的内容
+    /**
+     * 列表每项的内容
+     */
     @Override
     public void onBindViewHolder(@NonNull ViewAdapter.ViewHolder holder, int position) {
         User user = mUsers.get(position);
         holder.name.setText(user.getName());
-        holder.simg.setImageResource(user.getImg());
+        holder.sImg.setImageResource(user.getImg());
     }
 
     //列表有多少项
@@ -46,12 +47,12 @@ public class ViewAdapter extends RecyclerView.Adapter<ViewAdapter.ViewHolder> {
 
     static class ViewHolder extends RecyclerView.ViewHolder {
         private TextView name;
-        private ImageView simg;
+        private ImageView sImg;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             name = itemView.findViewById(R.id.studentname);
-            simg = itemView.findViewById(R.id.studentimage);
+            sImg = itemView.findViewById(R.id.studentimage);
         }
     }
 }

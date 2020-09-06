@@ -8,9 +8,11 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+/**
+ * @author Administrator
+ */
 public class FirstActivity extends AppCompatActivity {
-    private final static String TAG = "TEST";
-    private Button fristButton, sendbrodcast, startSecond;
+    private final static String TAG = "FirstActivity";
 
     @Override
     protected void onStart() {
@@ -52,28 +54,28 @@ public class FirstActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first);
-        Log.d("FristActivity", this.toString());
-        Log.d("FristActivity", "onRestart");
+        Log.d(TAG, this.toString());
+        Log.d(TAG, "onCreate");
 
-        fristButton = findViewById(R.id.fristbutton);
-        fristButton.setOnClickListener(new View.OnClickListener() {
+        Button firstButton = findViewById(R.id.fristbutton);
+        firstButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                setResult(1, getIntent());//将MainActivity传过来的数据传递回去,也可以创建新的Intent传回去
+                //将MainActivity传过来的数据传递回去,也可以创建新的Intent传回去
+                setResult(1, getIntent());
                 finish();
             }
         });
 
-        startSecond = findViewById(R.id.startactivity);
+        Button startSecond = findViewById(R.id.startactivity);
         startSecond.setOnClickListener(v -> {
             Intent intent = new Intent(this, SecondActivity.class);
             startActivityForResult(intent, 1);
         });
 
-
         //发送广播
-        sendbrodcast = findViewById(R.id.sendbrodcast);
-        sendbrodcast.setOnClickListener(v -> {
+        Button sendBroadcast = findViewById(R.id.sendbrodcast);
+        sendBroadcast.setOnClickListener(v -> {
             Intent intent = new Intent("cn.edu.scujcc.workoneweke.MY_BROADCAST");
             sendBroadcast(intent);
         });

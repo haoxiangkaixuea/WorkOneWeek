@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
  * @author Administrator
  */
 public class SecondActivity extends AppCompatActivity {
-    private final static String TAG = "TEST";
+    private final static String TAG = "SecondActivity";
     private Button secondButton;
 
     @Override
@@ -48,7 +48,7 @@ public class SecondActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
-        Log.d("FristActivity", this.toString());
+        Log.d(TAG, this.toString());
         secondButton = findViewById(R.id.secondbutton);
         secondButton.setOnClickListener(v -> {
             Intent intent = new Intent(this, TestActivity.class);

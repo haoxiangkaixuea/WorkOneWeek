@@ -5,7 +5,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -20,9 +19,6 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
     public final static String BASE = "base";
     private final static String TAG = "TEST";
-    private Button startFirst, startSecond;
-    private Button sendNews, startHttp, returnNews;
-    private TextView tv1;
     private List<User> userList = new ArrayList<>();
 
     @Override
@@ -66,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        imitUser();
+        initUser();
         //RecyclerView列表
         RecyclerView recyclerView = findViewById(R.id.recyclerview);
         //设置列表的布局方式，使用线性布局
@@ -80,8 +76,8 @@ public class MainActivity extends AppCompatActivity {
 
 
         //生命周期
-        startFirst = findViewById(R.id.startfrist);
-        startSecond = findViewById(R.id.startsecond);
+        Button startFirst = findViewById(R.id.startfrist);
+        Button startSecond = findViewById(R.id.startsecond);
         startFirst.setOnClickListener(v -> {
             Intent intent = new Intent(this, FirstActivity.class);
             startActivity(intent);
@@ -93,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         //Intent
-        startHttp = findViewById(R.id.starthttp);
+        Button startHttp = findViewById(R.id.starthttp);
         //intent打开网页
         startHttp.setOnClickListener(v -> {
             Intent intent = new Intent(Intent.ACTION_VIEW);
@@ -103,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         });
         //返回数据
-        returnNews = findViewById(R.id.button2);
+        Button returnNews = findViewById(R.id.button2);
         returnNews.setOnClickListener(v -> {
             Intent intent = new Intent(this, FirstActivity.class);
             startActivity(intent);
@@ -111,7 +107,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         //传递数据
-        sendNews = findViewById(R.id.sendnews);
+        Button sendNews = findViewById(R.id.sendnews);
         sendNews.setOnClickListener(v -> {
             /**
              * 传递Serializable对象
@@ -132,11 +128,10 @@ public class MainActivity extends AppCompatActivity {
 //            intent.putExtra("extra_int_array",ints);
 //            intent.putExtra("extra_string","teger Activity");
 
-
         });
     }
 
-    private void imitUser() {
+    private void initUser() {
         for (int i = 0; i < 2; i++) {
             User zhangsan = new User("张三", R.drawable.ic_launcher_background);
             userList.add(zhangsan);

@@ -58,8 +58,8 @@ public class TestActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
 
-        Button startFrist = findViewById(R.id.starfristactivity);
-        startFrist.setOnClickListener(v -> {
+        Button startFirst = findViewById(R.id.starfristactivity);
+        startFirst.setOnClickListener(v -> {
             Intent intent = new Intent(this, FirstActivity.class);
             intent.putExtra(MainActivity.BASE, "for result");
             startActivityForResult(intent, 1);
@@ -88,8 +88,6 @@ public class TestActivity extends AppCompatActivity {
 //        String a=intent.getStringExtra("extra_string");
 //        startActivity(intent);
 
-//
-//
 //    //获取Intent后,通过key获取对应的值,然后把值设置给TextView
 //    private void initData() {
 //        int base = getIntent().getIntExtra(MainActivity.BASE, 0);
@@ -101,19 +99,16 @@ public class TestActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        switch (requestCode) {
-            case 1:
-                // String returndate = data.getStringExtra("date_return");
-                //获取Intent后,通过key获取对应的值,然后把值设置给TextView
-                //String base = data.getStringExtra("date_return");
-                String base = data.getStringExtra(MainActivity.BASE);
-                Toast.makeText(this, base, Toast.LENGTH_SHORT).show();
-                //getIntent().getIntExtra(MainActivity.BASE, 0);
-                //tv1 = findViewById(R.id.textView2);
-                //tv1.setText(String.valueOf(base));
-                Log.d(TAG, base);
-                break;
-            default:
+        if (requestCode == 1) {
+            // String returndate = data.getStringExtra("date_return");
+            //获取Intent后,通过key获取对应的值,然后把值设置给TextView
+            //String base = data.getStringExtra("date_return");
+            String base = data.getStringExtra(MainActivity.BASE);
+            Toast.makeText(this, base, Toast.LENGTH_SHORT).show();
+            //getIntent().getIntExtra(MainActivity.BASE, 0);
+            //tv1 = findViewById(R.id.textView2);
+            //tv1.setText(String.valueOf(base));
+            Log.d(TAG, base);
         }
     }
 }
