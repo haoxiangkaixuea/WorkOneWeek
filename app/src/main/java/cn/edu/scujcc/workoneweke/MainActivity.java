@@ -109,9 +109,7 @@ public class MainActivity extends AppCompatActivity {
         //传递数据
         Button sendNews = findViewById(R.id.sendnews);
         sendNews.setOnClickListener(v -> {
-            /**
-             * 传递Serializable对象
-             */
+            //传递Serializable对象
             Student student = new Student();
             student.setStuName("张三");
             student.setClassName("一班");

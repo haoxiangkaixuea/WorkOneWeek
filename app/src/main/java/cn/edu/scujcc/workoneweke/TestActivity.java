@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,8 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
  */
 public class TestActivity extends AppCompatActivity {
     private final static String TAG = "TEST";
-    private TextView tv;
-    private Button backMassage;
+
 
     @Override
     protected void onStart() {
@@ -95,7 +93,9 @@ public class TestActivity extends AppCompatActivity {
 //    }
     }
 
-    //原 Activity 中重写 onActivityResult() 方法
+    /**
+     * 原 Activity 中重写 onActivityResult() 方法
+     */
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -108,7 +108,9 @@ public class TestActivity extends AppCompatActivity {
             //getIntent().getIntExtra(MainActivity.BASE, 0);
             //tv1 = findViewById(R.id.textView2);
             //tv1.setText(String.valueOf(base));
-            Log.d(TAG, base);
+            if (base != null) {
+                Log.d(TAG, base);
+            }
         }
     }
 }

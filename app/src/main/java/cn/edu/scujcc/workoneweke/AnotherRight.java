@@ -1,13 +1,15 @@
 package cn.edu.scujcc.workoneweke;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.fragment.app.Fragment;
+
+/**
+ * @author Administrator
+ */
 public class AnotherRight extends Fragment {
 
     @Override

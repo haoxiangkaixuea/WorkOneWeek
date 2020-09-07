@@ -21,7 +21,7 @@ public class ViewAdapter extends RecyclerView.Adapter<ViewAdapter.ViewHolder> {
         mUsers = user;
     }
 
-    //
+
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -39,7 +39,9 @@ public class ViewAdapter extends RecyclerView.Adapter<ViewAdapter.ViewHolder> {
         holder.sImg.setImageResource(user.getImg());
     }
 
-    //列表有多少项
+    /**
+     * 列表有多少项
+     */
     @Override
     public int getItemCount() {
         return mUsers.size();

@@ -3,7 +3,6 @@ package cn.edu.scujcc.workoneweke;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -58,13 +57,10 @@ public class FirstActivity extends AppCompatActivity {
         Log.d(TAG, "onCreate");
 
         Button firstButton = findViewById(R.id.fristbutton);
-        firstButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //将MainActivity传过来的数据传递回去,也可以创建新的Intent传回去
-                setResult(1, getIntent());
-                finish();
-            }
+        firstButton.setOnClickListener(view -> {
+            //将MainActivity传过来的数据传递回去,也可以创建新的Intent传回去
+            setResult(1, getIntent());
+            finish();
         });
 
         Button startSecond = findViewById(R.id.startactivity);
